@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Taschenrechner</title>
+	<link rel="icon" type="image/x-icon" href="assets/fav/favicon.ico">
+	<link rel="icon" type="image/svg+xml" href="assets/fav/favicon.svg">
+	<link rel="icon" type="image/png" sizes="96x96" href="assets/fav/favicon-96x96.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/fav/apple-touch-icon.png">
+	<link rel="manifest" href="assets/fav/site.webmanifest">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	<link rel="stylesheet" href="css/style.css?v=1.5.0">
+</head>
+
+<body>
+	<div class="logo">
+		<img src="assets/logo.png" alt="MagiCalc Logo">
+	</div>
+	<div class="login-section" id="login-section">
+		<div class="login-container">
+			<h3>Enter Username</h3>
+			<input type="text" id="username-input" placeholder="Enter your username" maxlength="20">
+			<button id="login-btn">Login</button>
+		</div>
+	</div>
+	<div class="container" id="calculator-container" style="display: none;">
+		<div class="calculator">
+			<input type="text" id="display" disabled>
+			<button id="history-toggle" class="history-toggle">📋 History</button>
+			<div class="buttons">
+				<button>C</button>
+				<button><i class="fas fa-backspace"></i></button>
+				<button><i class="fas fa-percentage"></i></button>
+				<button><i class="fas fa-divide"></i></button>
+				<button>7</button>
+				<button>8</button>
+				<button>9</button>
+				<button><i class="fas fa-times"></i></button>
+				<button>4</button>
+				<button>5</button>
+				<button>6</button>
+				<button><i class="fas fa-minus"></i></button>
+				<button>1</button>
+				<button>2</button>
+				<button>3</button>
+				<button><i class="fas fa-plus"></i></button>
+				<button disabled>fn</button>
+				<button>0</button>
+				<button>.</button>
+				<button><i class="fas fa-equals"></i></button>
+			</div>
+		</div>
+		<div class="history-panel">
+			<div class="history-user-info">
+				<span id="current-user"></span>
+				<button id="logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+			</div>
+			<div class="history-user-info">
+				<span class="history-username"></span>
+				<span class="history-count"></span>
+			</div>
+			<h3>History</h3>
+			<div id="history-loading" class="history-loading">
+				<i class="fas fa-spinner fa-spin"></i>
+				<span>Loading history...</span>
+			</div>
+			<div id="history-list"></div>
+			<button id="clear-history">Clear History</button>
+		</div>
+	</div>
+	<div class="mobile-history-overlay" id="mobile-history-overlay">
+		<div class="mobile-history-content">
+			<div class="mobile-history-header">
+				<div class="mobile-user-info">
+					<span id="mobile-current-user"></span>
+					<button id="mobile-logout-btn"><i class="fas fa-sign-out-alt"></i></button>
+				</div>
+				<button id="close-history">✕</button>
+			</div>
+			<div class="mobile-history-user-info">
+				<span class="mobile-history-username"></span>
+				<span class="mobile-history-count"></span>
+			</div>
+			<div id="mobile-history-loading" class="mobile-history-loading">
+				<i class="fas fa-spinner fa-spin"></i>
+				<span>Loading history...</span>
+			</div>
+			<div id="mobile-history-list"></div>
+			<button id="mobile-clear-history">Clear History</button>
+		</div>
+	</div>
+	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+	<script src="javascript/firebase-config.js?v=1.0.0"></script>
+	<script src="javascript/javascript.js?v=1.5.0"></script>
+</body>
+</html>
